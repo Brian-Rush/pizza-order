@@ -12,7 +12,24 @@ This is a webpage that allows the user to create a pizza order (number of pizzas
 
   Behavior | Input | Output
  ---|---|---
+ User can choose to order 1 pizza. | 1 | 1
+ User selects size for pizza and can see the size they have chosen | Large | Large
+ User can select a single desired topping and see what they have chosen. | Pepperoni | Pepperoni
+ User can submit the above-mentioned selections and see how much it will cost | user clicks submit button | $20.00
+ User can submit the above-mentioned selections and see an order summary and how much it will cost | user clicks submit button | $20.00
  
+
+ Program Specs
+
+ Behavior | Input | Output
+ ---|---|---
+ Program can receive and display user's desired number of pizzas | 1 | 1
+ User selects size for pizza and can see the size they have chosen | Large | Large
+ User can select a single desired topping and see what they have chosen. | Pepperoni | Pepperoni
+ User can submit the above-mentioned selections and see how much it will cost | user clicks submit button | $20.00
+ User can submit the above-mentioned selections and see an order summary and how much it will cost | user clicks submit button | $20.00
+
+
 
 ## Setup/Installation Requirements
 

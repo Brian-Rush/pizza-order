@@ -2,12 +2,11 @@
 <html>
   <head>
     <link href="https://afeld.github.io/emoji-css/emoji.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css"
-      href="https://fonts.googleapis.com/css?family=Font+Name">
+    <!-- <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Font+Name"> -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/styles.css">
-    <script src="js/jquery-ui.js"></script>
+    <!-- <script src="js/jquery-ui.js"></script> -->
     <script src="js/jquery-3.2.1.js"></script>
     <script src="js/scripts.js"></script>
     <title></title>
@@ -15,9 +14,24 @@
   <body>
     <div class="container">
 
-      <!-- <i class="em em-some-emoji"></i>
-      <div style="font-family: 'Font Name', serif;">Your text</div> -->
+      <div class="input-group">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[1]">
+                      <span class="glyphicon glyphicon-minus"></span>
+                    </button>
+                </span>
+                <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="5">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[1]">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </span>
+            </div>
 
     </div>
   </body>
 </html>
+
+
+<!-- <i class="em em-some-emoji"></i>
+<div style="font-family: 'Font Name', serif;">Your text</div> -->
