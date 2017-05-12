@@ -14,3 +14,7 @@
 .input-number {
   text-align: center;
 }
+
+#pizza-size {
+  width: 150px;
+}
