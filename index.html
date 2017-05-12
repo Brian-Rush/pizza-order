@@ -11,33 +11,85 @@
     <script src="js/scripts.js"></script>
     <title></title>
   </head>
+  <!-- Body -->
   <body>
+    <!-- Container -->
     <div class="container">
-
-      <div class="input-group">
-        <span class="input-group-btn">
-          <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[1]">
-            <span class="glyphicon glyphicon-minus"></span>
-          </button>
-        </span>
-        <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="5">
-          <span class="input-group-btn">
-            <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[1]">
-              <span class="glyphicon glyphicon-plus"></span>
-            </button>
-          </span>
+      <!-- Header / Jumbotron -->
+      <div class="header">
+        <div class="jumbotron">
+          <h1>Pizza Maker</h1>
+        </div>
       </div>
+      <!-- End Header / Jumbotron -->
 
-      <div class="form-group">
-        <!-- <label for="pizza-size">What size would you like?</label> -->
-        <select class="form-control" id="pizza-size">
-          <option>Choose a size</option>
-          <option>Small</option>
-          <option>Medium</option>
-          <option>Large</option>
-        </select>
+      <!-- Top Row -->
+      <div class="row">
+        <div class="col-md-12">
+          <!-- Quantity Input Group-->
+          <div class="input-group">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-danger btn-number"  data-type="minus" data-field="quant[1]">
+                <span class="glyphicon glyphicon-minus"></span>
+              </button>
+            </span>
+            <input type="text" name="quant[1]" class="form-control input-number" value="1" min="1" max="5">
+            <span class="input-group-btn">
+              <button type="button" class="btn btn-success btn-number" data-type="plus" data-field="quant[1]">
+                <span class="glyphicon glyphicon-plus"></span>
+              </button>
+            </span>
+          </div>
+          <!-- End Quantity Input Group -->
+
+          <!-- Size Select List -->
+          <div class="form-group">
+            <label for="pizza-size"></label>
+            <select class="form-control" id="pizza-size">
+              <option style="display:none" disabled selected value >Choose a size</option>
+              <option>Small</option>
+              <option>Medium</option>
+              <option>Large</option>
+            </select>
+          </div>
+          <!-- End Size Select List -->
+        </div>
       </div>
+      <!-- End Top Row -->
 
+      <!-- Topping Checkbox Row -->
+      <div class="row">
+        <div class="col-md-4">
+          <div class="form-group">
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Pepperoni
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Pepperoni
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Pepperoni
+              </label>
+            </div>
+            <div class="checkbox">
+              <label>
+                <input type="checkbox"> Pepperoni
+              </label>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-4">
+
+        </div>
+      </div>
     </div>
   </body>
 </html>
