@@ -1,10 +1,16 @@
-.css-selector {
+/*.css-selector {
   font-family: 'Font Name', serif;
-}
+}*/
 
-
-
-.center {
+/*.center {
   width: 150px;
   margin: 40px auto;
+}*/
+
+.input-group {
+  width: 150px;
+}
+
+.input-number {
+  text-align: center;
 }
