@@ -1,10 +1,43 @@
 //BUSINESS LOGIC//
 
-function Pizza(size, cost, numToppings) {
+//Order Object Constructor
+// function Order(total) {
+//   this.orderTotal = total;
+//   this.subtotals = [];
+//   this.pizzas = []
+// }
+
+//Pizza Object Constructor
+function Pizza(size, baseCost, cost, numToppings) {
   this.pizzaSize = size;
+  this.baseCost = baseCost;
   this.pizzaCost = cost;
   this.numToppings = numToppings,
   this.toppingsArray = [];
+}
+
+Pizza.prototype.determineBaseCost = function() {
+  if (this.pizzaSize == "small") {
+    this.baseCost = 12;
+  } else if (this.pizzaSize == "medium") {
+    this.baseCost = 15;
+  } else if (this.pizzaSize == "large") {
+    this.baseCost = 18;
+  }
+  return this.baseCost;
+};
+
+Pizza.prototype.calculatePizzaCost = function(baseCost) {
+  var smallBaseCost = 12;
+  var mediumBaseCost = 15;
+  var largeBaseCost = 18;
+  var smallToppingCost = 1;
+  var mediumToppingCost = 1.5;
+  var largeToppingCost = 2;
+
+
+  // baseCost + ()
+
 }
 
 
@@ -86,6 +119,9 @@ $(document).ready(function() {
 
   $('#submit-order').submit(function(event) {
     event.preventDefault();
+
+    // new Order();
+    new Pizza();
 
   });
 // });
