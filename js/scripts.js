@@ -59,6 +59,7 @@ Pizza.prototype.calculatePizzaCost = function(baseCost) {
 //USER INTERFACE LOGIC//
 $(document).ready(function() {
 
+  // Number of pizzas input
   $('.btn-number').click(function(e) {
     e.preventDefault();
     var fieldName = $(this).attr('data-field');
@@ -89,11 +90,11 @@ $(document).ready(function() {
       input.val(0);
     }
   });
-
+  // More number of pizzas input stuff
   $('.input-number').focusin(function(){
     $(this).data('oldValue', $(this).val());
   });
-
+  // More number of pizzas input stuff
   $('.input-number').change(function() {
     var minValue =  parseInt($(this).attr('min'));
     var maxValue =  parseInt($(this).attr('max'));
@@ -114,7 +115,7 @@ $(document).ready(function() {
       $(this).val($(this).data('oldValue'));
     }
   });
-
+  // More number of pizzas input stuff
   $(".input-number").keydown(function (e) {
       // Allow: backspace, delete, tab, escape, enter and .
       if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 190]) !== -1 ||
@@ -132,6 +133,7 @@ $(document).ready(function() {
     });
   });
 
+  // Submit Listener
   $('#submit-order').submit(function(event) {
     event.preventDefault();
 
