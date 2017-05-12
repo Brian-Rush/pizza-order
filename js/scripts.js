@@ -9,26 +9,28 @@
 
 //Pizza Object Constructor
 function Pizza(size, baseCost, individToppingCost, cost, numToppings) {
-  this.pizzaSize = size;
-  this.baseCost = baseCost;
-  this.individToppingCost = individToppingCost;
-  this.pizzaCost = cost;
-  this.numToppings = numToppings,
+  this.pizzaSize = "";
+  this.baseCost = 0;
+  this.individToppingCost = 0;
+  this.pizzaCost = 0;
+  this.numToppings = 1,
   this.toppingsArray = [];
 }
 
-Pizza.prototype.determineBaseCost = function() {
+//Prototype to determine the base cost of a given pizza, based on size.
+Pizza.prototype.setBaseCost = function() {
   if (this.pizzaSize == "small") {
-    this.baseCost = 12;
+    this.baseCost = 11;
   } else if (this.pizzaSize == "medium") {
-    this.baseCost = 15;
+    this.baseCost = 13.5;
   } else if (this.pizzaSize == "large") {
-    this.baseCost = 18;
+    this.baseCost = 16;
   }
   return this.baseCost;
 };
 
-Pizza.prototype.determineIndividToppingCost = function() {
+//Prototype to determine individual topping cost for a given pizza, based on size
+Pizza.prototype.setIndividToppingCost = function() {
   if (this.pizzaSize == "small") {
     this.individToppingCost = 1;
   } else if (this.pizzaSize == "medium") {
@@ -39,9 +41,12 @@ Pizza.prototype.determineIndividToppingCost = function() {
   return this.individToppingCost;
 }
 
+// Prototype to calculate the cost of a given pizza. Incorporates previous pizza prototypes inside itself.
 Pizza.prototype.calculatePizzaCost = function(baseCost) {
-  this.pizzaCost = this.baseCost + (this.numToppings * )
-
+  this.setBaseCost();
+  this.setIndividToppingCost();
+  this.pizzaCost = this.baseCost + (this.numToppings * this.individToppingCost);
+  return this.pizzaCost;
 }
 
 
