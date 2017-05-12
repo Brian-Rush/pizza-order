@@ -41,6 +41,20 @@ Pizza.prototype.setIndividToppingCost = function() {
   return this.individToppingCost;
 }
 
+//Prototype to push toppings to toppingsArray
+Pizza.prototype.pushToToppingsArray = function() {
+  var checkCheckBoxValue = document.getElementsByClassName('checkbox');
+  // var checkBoxArray = [];
+
+  for (i = 0; i < this.toppingsArray.legth(); i++) {
+    if (checkCheckBoxValue[i].checked === true) {
+      toppingsArray.push(checkCheckBoxValue[i].name);
+    }
+  }
+  return this.toppingsArray;
+  // this.toppingsArray.push(getElementsByClassName('checkbox'))
+}
+
 //Prototype to set the number of toppings for a given pizza
 Pizza.prototype.setNumToppings = function() {
   this.numToppings = parseInt(this.toppingsArray.length);
@@ -54,6 +68,8 @@ Pizza.prototype.calculatePizzaCost = function(baseCost) {
   this.pizzaCost = this.baseCost + (this.numToppings * this.individToppingCost);
   return this.pizzaCost;
 }
+
+var pizzaOne = new Pizza();
 
 
 //USER INTERFACE LOGIC//
