@@ -1,5 +1,11 @@
 //BUSINESS LOGIC//
 
+function Pizza(size, cost, numToppings) {
+  this.pizzaSize = size;
+  this.pizzaCost = cost;
+  this.numToppings = numToppings,
+  this.toppingsArray = [];
+}
 
 
 //USER INTERFACE LOGIC//
