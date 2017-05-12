@@ -8,9 +8,10 @@
 // }
 
 //Pizza Object Constructor
-function Pizza(size, baseCost, cost, numToppings) {
+function Pizza(size, baseCost, individToppingCost, cost, numToppings) {
   this.pizzaSize = size;
   this.baseCost = baseCost;
+  this.individToppingCost = individToppingCost;
   this.pizzaCost = cost;
   this.numToppings = numToppings,
   this.toppingsArray = [];
@@ -27,16 +28,19 @@ Pizza.prototype.determineBaseCost = function() {
   return this.baseCost;
 };
 
+Pizza.prototype.determineIndividToppingCost = function() {
+  if (this.pizzaSize == "small") {
+    this.individToppingCost = 1;
+  } else if (this.pizzaSize == "medium") {
+    this.individToppingCost = 1.5;
+  } else if (this.pizzaSize == "large") {
+    this.individToppingCost = 2;
+  }
+  return this.individToppingCost;
+}
+
 Pizza.prototype.calculatePizzaCost = function(baseCost) {
-  var smallBaseCost = 12;
-  var mediumBaseCost = 15;
-  var largeBaseCost = 18;
-  var smallToppingCost = 1;
-  var mediumToppingCost = 1.5;
-  var largeToppingCost = 2;
-
-
-  // baseCost + ()
+  this.pizzaCost = this.baseCost + (this.numToppings * )
 
 }
 
