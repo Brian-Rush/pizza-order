@@ -42,18 +42,34 @@ Pizza.prototype.setIndividToppingCost = function() {
 }
 
 //Prototype to push toppings to toppingsArray
-// Pizza.prototype.pushToToppingsArray = function() {
-//   var checkCheckBoxValue = document.getElementsByClassName('check');
-//   // var checkBoxArray = [];
+// Pizza.prototype.pushToToppingsArray = function(checkedCheckboxes) {
+//   ("checkedCheckboxes").each(function(){
+//     pizzaOne.toppingsArray.push($(this).attr('name'));
+//   });
 //
-//   for (i = 0; i < this.toppingsArray.length; i++) {
-//     if (checkCheckBoxValue[i].checked === true) {
-//       this.toppingsArray.push(checkCheckBoxValue[i].name);
-//     }
+//   for (i=0; i < this.toppingsArray.length; i++){
+//     if
 //   }
-//   return this.toppingsArray;
-//   // this.toppingsArray.push(getElementsByClassName('checkbox'))
 // }
+
+Pizza.prototype.pushToToppingsArray = function() {
+  var checkCheckBoxValue = document.getElementsByClassName('check');
+  this.toppingsArray = [];
+
+  for (i = 0; i < (checkCheckBoxValue.length); i++) { 
+    if (checkCheckBoxValue[i].checked === true) {
+      this.toppingsArray.push(checkCheckBoxValue[i].value);
+    }
+  }
+
+  // while (i++ <= (this.toppingsArray.length + 1)) {
+  //   if (checkCheckBoxValue[i].checked === true) {
+  //     this.toppingsArray.push(checkCheckBoxValue[i].value);
+  //   }
+  // }
+  // return this.toppingsArray;
+  // this.toppingsArray.push(getElementsByClassName('checkbox'))
+}
 
 //Prototype to set the number of toppings for a given pizza
 Pizza.prototype.setNumToppings = function() {
@@ -153,10 +169,11 @@ $(document).ready(function() {
   $('#pizza-one').submit(function(event) {
     event.preventDefault();
       console.log("hello");
-      // pizzaOne.pushToToppingsArray(document);
-      $(".checkbox input:checked").each(function(){
-        pizzaOne.toppingsArray.push($(this).attr('name'));
-      })
+      pizzaOne.pushToToppingsArray();
+      console.log(pizzaOne);
+      // $(".checkbox input:checked").each(function(){
+      //   pizzaOne.toppingsArray.push($(this).attr('name'));
+      // })
       // pizzaOne.toppingsArray.push($("input[type='checkbox']").name());
   });
 });
