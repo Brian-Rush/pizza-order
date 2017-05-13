@@ -42,33 +42,15 @@ Pizza.prototype.setIndividToppingCost = function() {
 }
 
 //Prototype to push toppings to toppingsArray
-// Pizza.prototype.pushToToppingsArray = function(checkedCheckboxes) {
-//   ("checkedCheckboxes").each(function(){
-//     pizzaOne.toppingsArray.push($(this).attr('name'));
-//   });
-//
-//   for (i=0; i < this.toppingsArray.length; i++){
-//     if
-//   }
-// }
-
 Pizza.prototype.pushToToppingsArray = function() {
   var checkCheckBoxValue = document.getElementsByClassName('check');
   this.toppingsArray = [];
 
-  for (i = 0; i < (checkCheckBoxValue.length); i++) { 
+  for (i = 0; i < (checkCheckBoxValue.length); i++) {
     if (checkCheckBoxValue[i].checked === true) {
       this.toppingsArray.push(checkCheckBoxValue[i].value);
     }
   }
-
-  // while (i++ <= (this.toppingsArray.length + 1)) {
-  //   if (checkCheckBoxValue[i].checked === true) {
-  //     this.toppingsArray.push(checkCheckBoxValue[i].value);
-  //   }
-  // }
-  // return this.toppingsArray;
-  // this.toppingsArray.push(getElementsByClassName('checkbox'))
 }
 
 //Prototype to set the number of toppings for a given pizza
@@ -76,6 +58,24 @@ Pizza.prototype.setNumToppings = function() {
   this.numToppings = parseInt(this.toppingsArray.length);
 }
 
+//Prototype to set pizza size
+Pizza.prototype.setPizzaSize = function() {
+  var checkSelectList = document.getElementById('pizza-size');
+  this.pizzaSize = checkSelectList.options[checkSelectList.selectedIndex].value;
+
+  // if (checkSelectList != "small" && checkSelectListValue != "medium" && checkSelectListValue != "large" ) {
+  //   alert("You gotta choose a size, man! Otherwise our pizza chef might make you a microscopic pizza!");
+  // } else {
+  //   this.pizzaSize = (checkSelectListValue.value);
+  // }
+  // else if (checkSelectListValue == "small") {
+  //   this.pizzaSize = "small"
+  // } else if (checkSelectListValue == "medium") {
+  //   this.pizzaSize = "medium"
+  // } else if (checkSelectListValue == "large") {
+  //   this.pizzaSize = "large"
+  // }
+}
 // Prototype to calculate the cost of a given pizza. Incorporates previous pizza prototypes inside itself.
 Pizza.prototype.calculatePizzaCost = function() {
   this.setBaseCost();
@@ -170,10 +170,8 @@ $(document).ready(function() {
     event.preventDefault();
       console.log("hello");
       pizzaOne.pushToToppingsArray();
+      pizzaOne.setPizzaSize();
       console.log(pizzaOne);
-      // $(".checkbox input:checked").each(function(){
-      //   pizzaOne.toppingsArray.push($(this).attr('name'));
-      // })
-      // pizzaOne.toppingsArray.push($("input[type='checkbox']").name());
+
   });
 });
