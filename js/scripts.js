@@ -63,19 +63,11 @@ Pizza.prototype.setPizzaSize = function() {
   var checkSelectList = document.getElementById('pizza-size');
   this.pizzaSize = checkSelectList.options[checkSelectList.selectedIndex].value;
 
-  // if (checkSelectList != "small" && checkSelectListValue != "medium" && checkSelectListValue != "large" ) {
-  //   alert("You gotta choose a size, man! Otherwise our pizza chef might make you a microscopic pizza!");
-  // } else {
-  //   this.pizzaSize = (checkSelectListValue.value);
-  // }
-  // else if (checkSelectListValue == "small") {
-  //   this.pizzaSize = "small"
-  // } else if (checkSelectListValue == "medium") {
-  //   this.pizzaSize = "medium"
-  // } else if (checkSelectListValue == "large") {
-  //   this.pizzaSize = "large"
-  // }
+  if (!this.pizzaSize) {
+    alert("You gotta choose a size, man! Otherwise our pizza chef might make you a microscopic pizza!");
+  }
 }
+
 // Prototype to calculate the cost of a given pizza. Incorporates previous pizza prototypes inside itself.
 Pizza.prototype.calculatePizzaCost = function() {
   this.setBaseCost();
@@ -83,6 +75,12 @@ Pizza.prototype.calculatePizzaCost = function() {
   this.setNumToppings();
   this.pizzaCost = this.baseCost + (this.numToppings * this.individToppingCost);
   return this.pizzaCost;
+}
+
+Pizza.prototype.setPizzaDetails = function() {
+  this.setPizzaSize();
+  this.pushToToppingsArray();
+  this.calculatePizzaCost();
 }
 
 var pizzaOne = new Pizza();
@@ -169,8 +167,10 @@ $(document).ready(function() {
   $('#pizza-one').submit(function(event) {
     event.preventDefault();
       console.log("hello");
-      pizzaOne.pushToToppingsArray();
-      pizzaOne.setPizzaSize();
+      // pizzaOne.pushToToppingsArray();
+      // pizzaOne.setPizzaSize();
+      // pizzaOne.calculatePizzaCost();
+      pizzaOne.setPizzaDetails();
       console.log(pizzaOne);
 
   });
