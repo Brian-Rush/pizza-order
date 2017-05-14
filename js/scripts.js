@@ -171,7 +171,7 @@ $(document).ready(function() {
     pizzaOne.setPizzaDetails();
     console.log(pizzaOne);
 
-    $("#pizza-output").text("Pizza 1: $" + pizzaOne.pizzaCost.toFixed(2));
+    $("#pizza-output-one").text("Pizza 1: $" + pizzaOne.pizzaCost.toFixed(2));
 
 
   });
