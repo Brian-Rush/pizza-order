@@ -166,12 +166,13 @@ $(document).ready(function() {
   // Submit Listener
   $('#pizza-one').submit(function(event) {
     event.preventDefault();
-      console.log("hello");
-      // pizzaOne.pushToToppingsArray();
-      // pizzaOne.setPizzaSize();
-      // pizzaOne.calculatePizzaCost();
-      pizzaOne.setPizzaDetails();
-      console.log(pizzaOne);
+    // console.log("hello");
+    //Populate pizzaOne's properties
+    pizzaOne.setPizzaDetails();
+    console.log(pizzaOne);
+
+    $("#pizza-output").text("Pizza 1: $" + pizzaOne.pizzaCost.toFixed(2));
+
 
   });
 });
