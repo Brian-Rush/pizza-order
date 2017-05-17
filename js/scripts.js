@@ -55,7 +55,7 @@ Pizza.prototype.pushToToppingsArray = function() {
 
 //Prototype to set the number of toppings for a given pizza
 Pizza.prototype.setNumToppings = function() {
-  this.numToppings = parseInt(this.toppingsArray.length);
+  this.numToppings = (this.toppingsArray.length);
 }
 
 //Prototype to set pizza size
@@ -74,7 +74,7 @@ Pizza.prototype.calculatePizzaCost = function() {
   this.setIndividToppingCost();
   this.setNumToppings();
   this.pizzaCost = this.baseCost + (this.numToppings * this.individToppingCost);
-  return this.pizzaCost;
+  return this.pizzaCost.toFixed(2);
 }
 
 Pizza.prototype.setPizzaDetails = function() {
@@ -83,7 +83,23 @@ Pizza.prototype.setPizzaDetails = function() {
   this.calculatePizzaCost();
 }
 
+Pizza.prototype.toSentence = function() {
+  var lastTopping = this.toppingsArray.slice(-1);
+  var restOfToppings = this.toppingsArray.slice(0, -1).join(", ");
+  var price = this.calculatePizzaCost();
+  if (this.toppingsArray.length === 2) {
+    var sentence = "Your pizza with " + restOfToppings + " and " + lastTopping + " costs " + price;
+  } else if (this.toppingsArray.length > 2) {
+    var sentence = "Your pizza with " + restOfToppings + ", and " + lastTopping + " costs $" + price;
+  } else if (this.toppingsArray.length === 1) {
+    var sentence = "Your " + lastTopping + " pizza costs $" + price;
+  }
+  return sentence;
+}
+
 var pizzaOne = new Pizza();
+
+// Pizza.prototype.getLastTopping
 
 
 //USER INTERFACE LOGIC//
@@ -171,7 +187,8 @@ $(document).ready(function() {
     pizzaOne.setPizzaDetails();
     console.log(pizzaOne);
 
-    $("#pizza-output-one").text("Pizza 1: $" + pizzaOne.pizzaCost.toFixed(2));
+    // $("#pizza-output-one").text("Pizza 1: $" + pizzaOne.pizzaCost.toFixed(2));
+    $("#pizza-output-one").text(pizzaOne.toSentence());
 
 
   });
