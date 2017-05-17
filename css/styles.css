@@ -7,6 +7,15 @@
   margin: 40px auto;
 }*/
 
+h1 {
+  text-align: center;
+}
+
+form {
+  margin: auto;
+  width: 80%;
+}
+
 .input-group {
   width: 150px;
 }
@@ -17,4 +26,9 @@
 
 #pizza-size {
   width: 150px;
+}
+
+#pizza-output-one {
+  width: 80%;
+  margin:auto;
 }
